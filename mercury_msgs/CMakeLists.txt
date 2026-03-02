@@ -7,16 +7,25 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-
 find_package(rosidl_default_generators REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME})
-  # Actions
+# grab all message files 
+file(GLOB msg_sources RELATIVE ${PROJECT_SOURCE_DIR} msg/*.msg)
+file(GLOB srv_sources RELATIVE ${PROJECT_SOURCE_DIR} srv/*.srv)
+file(GLOB act_sources RELATIVE ${PROJECT_SOURCE_DIR} action/*.action)
+
+# generate messages
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_sources}
+  ${srv_sources}
+  ${act_sources}
+  DEPENDENCIES geometry_msgs
+
   "action/ExecuteTree.action"
+)
+ament_export_dependencies(rosidl_default_runtime)
 
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
