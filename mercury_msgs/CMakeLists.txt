@@ -22,7 +22,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   ${act_sources}
   DEPENDENCIES geometry_msgs
 
-  "action/ExecuteTree.action"
 )
 ament_export_dependencies(rosidl_default_runtime)
 
