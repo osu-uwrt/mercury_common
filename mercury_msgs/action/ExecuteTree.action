@@ -11,18 +11,15 @@ string tree_path
 # --- Result ---
 # Final outcome of the tree execution.
 # 0 = SUCCESS, 1 = FAILURE, 2 = CANCELED, 3 = ERROR
-int32 result_status
-
-# Human-readable message describing the outcome.
-string message
-
-# Total wall-clock duration of the execution in seconds.
-float64 elapsed_seconds
+int32 return_code
 
 
 # --- Feedback ---
 # Current BT node status string (e.g., "RUNNING", "LOADING").
 string current_status
+
+# Call stack for currently running tree
+TreeStack stack
 
 # Seconds elapsed since the tree started ticking.
 float64 elapsed_seconds
