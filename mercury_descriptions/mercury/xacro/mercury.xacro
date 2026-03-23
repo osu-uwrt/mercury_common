@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot name="mercury" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:arg name="namespace" default="mercury" />
+    <xacro:arg name="use_zed_camera" default="false" />
+    <xacro:arg name="zed_xacro_path" default="" />
+    <!-- Include the Robot macro file -->
+    <xacro:include filename="$(find mercury_descriptions)/mercury/xacro/mercury_base.xacro" />
+
+    <!-- Read the config -->
+    <xacro:property name="yaml_file" value="$(find mercury_descriptions)/mercury/config/mercury_xacro_frames.yaml" />
+    <xacro:property name="config" value="${xacro.load_yaml(yaml_file)}" />
+    <!-- <xacro:property name="body_file" value="package://riptide_descriptions2/meshes/mercury.dae"/> -->
+    <!-- <xacro:property name="prop_file" value="package://riptide_descriptions2/meshes/Propeller.dae"/> -->
+
+    <!-- Create robot -->
+    <xacro:robot_base
+        namespace="$(arg namespace)"
+        config="${config}" />
+
+    <xacro:if value="$(arg use_zed_camera)">
+        <xacro:include filename="$(arg zed_xacro_path)" />
+    </xacro:if>
+
+</robot>
