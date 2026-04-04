@@ -14,24 +14,24 @@
         </joint>
 
         <link name="${namespace}/thruster_${thruster_id}">
-            <!-- <visual>
+            <visual>
                 <geometry>
-                    <mesh filename="${mesh_filename}" scale="1 1 1" />
+                    <mesh filename="package://riptide_descriptions2/meshes/Propeller.dae" scale="1 1 1" />
                 </geometry>
-            </visual> -->
+            </visual>
         </link>
     </xacro:macro>
 
     <xacro:macro name="all_thrusters_macro" params="namespace thrusters index">
         <xacro:if value="${thrusters != []}">
             <xacro:property name="thruster" value="${thrusters[0]}"/>
-            <xacro:single_thruster_macro 
+            <xacro:single_thruster_macro
                 namespace="${namespace}"
                 thruster_id="${index}">
-                <origin xyz="${thruster['pose'][0]} ${thruster['pose'][1]} ${thruster['pose'][2]}" 
+                <origin xyz="${thruster['pose'][0]} ${thruster['pose'][1]} ${thruster['pose'][2]}"
                         rpy="${thruster['pose'][3]} ${thruster['pose'][4]} ${thruster['pose'][5]}"/>
             </xacro:single_thruster_macro>
-            <xacro:all_thrusters_macro 
+            <xacro:all_thrusters_macro
                 namespace="${namespace}"
                 thrusters="${thrusters[1:]}"
                 index="${index+1}"/>
@@ -46,7 +46,7 @@
             <xacro:property name="imu" value="${config['imu']}" />
 
             <joint name="${namespace}/imu${imu_suffix}_joint" type="fixed">
-                <origin xyz="${imu['pose'][0]} ${imu['pose'][1]} ${imu['pose'][2]}" 
+                <origin xyz="${imu['pose'][0]} ${imu['pose'][1]} ${imu['pose'][2]}"
                         rpy="${imu['pose'][3]} ${imu['pose'][4]} ${imu['pose'][5]}" />
                 <parent link="${parent_link}" />
                 <child link="${namespace}/imu${imu_suffix}_link" />

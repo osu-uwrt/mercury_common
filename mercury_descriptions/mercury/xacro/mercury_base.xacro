@@ -14,6 +14,12 @@
             </geometry>
             <transparency>0.8</transparency>
         </visual> -->
+            <visual>
+                <geometry>
+                    <mesh filename="package://mercury_meshes/meshes/mercury/model.dae" scale="1 1 1"/>
+                </geometry>
+                <transparency>0.8</transparency>
+            </visual>
         </link>
 
         <!-- <xacro:include filename="$(find mercury_descriptions)/mercury/robot_sensors.xacro" /> -->
@@ -25,7 +31,7 @@
             parent_link="${namespace}/base_link"
             config="${config}" />
 
-        <xacro:all_thrusters_macro 
+        <xacro:all_thrusters_macro
             namespace="${namespace}"
             thrusters="${config['thrusters']}"
             index="0" />
