@@ -54,4 +54,20 @@
         </xacro:if>
     </xacro:macro>
 
+    <!-- Depth Sensor-->
+    <xacro:macro name="depth_macro" params="namespace parent_link config">
+        <xacro:if value="${'depth' in config}">
+            <link name="${namespace}/depth_link" />
+
+            <xacro:property name="depth" value="${config['depth']}"/>
+
+            <joint name="${namespace}/depth_joint" type="fixed">
+                <origin xyz="${depth['pose'][0]} ${depth['pose'][1]} ${depth['pose'][2]}"
+                        rpy="${depth['pose'][3]} ${depth['pose'][4]} ${depth['pose'][5]}" />
+                <parent link="${parent_link}" />
+                <child link="${namespace}/depth_link" />
+            </joint>
+        </xacro:if>
+    </xacro:macro>
+
 </robot>

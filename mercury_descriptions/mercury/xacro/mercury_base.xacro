@@ -25,16 +25,23 @@
         <!-- <xacro:include filename="$(find mercury_descriptions)/mercury/robot_sensors.xacro" /> -->
         <!-- <xacro:include filename="$(find riptide_descriptions2)/urdf/robot_actuators.xacro" /> -->
 
+        <xacro:all_thrusters_macro
+            namespace="${namespace}"
+            thrusters="${config['thrusters']}"
+            index="0" />
+
         <xacro:imu_macro
             namespace="${namespace}"
             imu_suffix=""
             parent_link="${namespace}/base_link"
             config="${config}" />
 
-        <xacro:all_thrusters_macro
+        <xacro:depth_macro
             namespace="${namespace}"
-            thrusters="${config['thrusters']}"
-            index="0" />
+            parent_link="${namespace}/base_link"
+            config="${config}" />
+
+
 
   </xacro:macro>
 </robot>
