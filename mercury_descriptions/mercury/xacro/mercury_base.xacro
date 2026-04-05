@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- All coordinates in file must follow ROS conventions: x forward, z up -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find mercury_descriptions)/common/xacro/snippets.xacro" />
+
+    <xacro:macro name="robot_base"
+        params="namespace config">
+
+        <link name="${namespace}/base_link">
+        <!-- <visual>
+            <geometry>
+            <mesh filename="${body_file}" scale="1 1 1"/>
+            </geometry>
+            <transparency>0.8</transparency>
+        </visual> -->
+        </link>
+
+        <!-- <xacro:include filename="$(find mercury_descriptions)/mercury/robot_sensors.xacro" /> -->
+        <!-- <xacro:include filename="$(find riptide_descriptions2)/urdf/robot_actuators.xacro" /> -->
+
+        <xacro:imu_macro
+            namespace="${namespace}"
+            imu_suffix=""
+            parent_link="${namespace}/base_link"
+            config="${config}" />
+
+        <xacro:all_thrusters_macro 
+            namespace="${namespace}"
+            thrusters="${config['thrusters']}"
+            index="0" />
+
+  </xacro:macro>
+</robot>
