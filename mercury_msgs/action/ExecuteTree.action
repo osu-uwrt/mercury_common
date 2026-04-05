@@ -7,12 +7,14 @@
 # Absolute path to the BT XML file to execute.
 string tree_path
 
+---
 
 # --- Result ---
 # Final outcome of the tree execution.
 # 0 = SUCCESS, 1 = FAILURE, 2 = CANCELED, 3 = ERROR
 int32 return_code
 
+---
 
 # --- Feedback ---
 # Current BT node status string (e.g., "RUNNING", "LOADING").
