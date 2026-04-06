@@ -1,8 +1,17 @@
 imu:
-  pose: [-0.25, -0.1492, 0.0222, 3.141, 0.0, -1.5707]
+  pose: [-0.05, -0.05, 0.0222, 0.0, 0.0, 0.0]
 
 depth:
   pose: [ -0.305, -0.125, 0.045, 0.0, 0.0, 0.0]
+
+cameras: [
+  {
+    type: zed, 
+    name: ffc,
+    baseline: 0.045, # m. Distance between cameras (manually measured) 
+    pose: [0.1, -0.0, 0, 1.5707, 0, 0]
+  }
+]
 
 thrusters: [
   {
