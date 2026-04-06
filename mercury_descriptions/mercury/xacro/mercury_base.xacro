@@ -40,6 +40,11 @@
             namespace="${namespace}"
             parent_link="${namespace}/base_link"
             config="${config}" />
+        
+        <xacro:cameras_macro
+            namespace="${namespace}"
+            parent_link="${namespace}/base_link"
+            cameras="${config['cameras']}" />
 
 
 

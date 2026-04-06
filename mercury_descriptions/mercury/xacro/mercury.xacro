@@ -18,8 +18,4 @@
         namespace="$(arg namespace)"
         config="${config}" />
 
-    <xacro:if value="$(arg use_zed_camera)">
-        <xacro:include filename="$(arg zed_xacro_path)" />
-    </xacro:if>
-
 </robot>
