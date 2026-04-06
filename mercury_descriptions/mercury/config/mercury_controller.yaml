@@ -5,7 +5,7 @@ controller_overseer:
 
 controller:
   scaling_factor: 1000000
-  active_force_mask: [2, 2, 2, 1, 1, 1]
+  active_force_mask: [2, 2, 2, 1, 1, 2]
 
   feed_forward:
     base_wrench: [-1.0, -1.0, 0.0, -0.95, 2.1, 0.0]
