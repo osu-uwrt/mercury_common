@@ -22,6 +22,15 @@
             </visual>
         </link>
 
+        <link name="${namespace}/dvl_link">
+        </link>
+
+        <joint name="dvl_joint" type="fixed">
+            <parent link="${namespace}/base_link"/>
+            <child link="${namespace}/dvl_link"/>
+            <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+        </joint>
+
         <!-- <xacro:include filename="$(find mercury_descriptions)/mercury/robot_sensors.xacro" /> -->
         <!-- <xacro:include filename="$(find riptide_descriptions2)/urdf/robot_actuators.xacro" /> -->
 
