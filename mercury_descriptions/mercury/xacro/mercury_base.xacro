@@ -7,6 +7,13 @@
     <xacro:macro name="robot_base"
         params="namespace config">
 
+        <link name="${namespace}/base_center"/>
+            <joint name="${namespace}/base_center_to_base_link" type="fixed">
+                <parent link="${namespace}/base_center"/>
+                <child link="${namespace}/base_link"/>
+                <origin xyz="${config['robot_center'][0]} ${config['robot_center'][1]} ${config['robot_center'][2]}" rpy="0 0 0"/>
+            </joint>
+
         <link name="${namespace}/base_link">
         <!-- <visual>
             <geometry>
