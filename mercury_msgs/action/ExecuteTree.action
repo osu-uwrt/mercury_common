@@ -1,11 +1,27 @@
-# goal
-string tree
+# ExecuteTree.action -- Goal/Result/Feedback for BT tree execution.
+#
+# Used by mercury_autonomy's tree_executor action server to start, monitor,
+# and report on BehaviorTree XML file execution.
+
+# --- Goal ---
+# Absolute path to the BT XML file to execute.
+string tree_path
 
 ---
-# result
-bool error
-uint32 returncode
+
+# --- Result ---
+# Final outcome of the tree execution.
+# 0 = SUCCESS, 1 = FAILURE, 2 = CANCELED, 3 = ERROR
+int32 return_code
 
 ---
-# feedback
+
+# --- Feedback ---
+# Current BT node status string (e.g., "RUNNING", "LOADING").
+string current_status
+
+# Call stack for currently running tree
 TreeStack stack
+
+# Seconds elapsed since the tree started ticking.
+float64 elapsed_seconds
