@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- All coordinates in file must follow ROS conventions: x forward, z up -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="sim_setup"
+        params="namespace">
+
+        <link name="${namespace}/dvl_link">
+        </link>
+
+        <joint name="dvl_joint" type="fixed">
+            <parent link="${namespace}/base_link"/>
+            <child link="${namespace}/dvl_link"/>
+            <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+        </joint>
+
+
+    </xacro:macro>
+</robot>

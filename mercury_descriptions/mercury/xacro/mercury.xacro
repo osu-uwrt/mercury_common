@@ -4,6 +4,7 @@
     <xacro:arg name="namespace" default="mercury" />
     <xacro:arg name="use_zed_camera" default="false" />
     <xacro:arg name="zed_xacro_path" default="" />
+    <xacro:arg name="sim_enabled" default="false" />
     <!-- Include the Robot macro file -->
     <xacro:include filename="$(find mercury_descriptions)/mercury/xacro/mercury_base.xacro" />
 
@@ -17,5 +18,11 @@
     <xacro:robot_base
         namespace="$(arg namespace)"
         config="${config}" />
+
+    <xacro:if value="$(arg sim_enabled)">
+        <xacro:include filename="$(find mercury_descriptions)/mercury/xacro/mercury_sim.xacro" />
+        <xacro:sim_setup 
+            namespace="$(arg namespace)" />
+    </xacro:if>    
 
 </robot>
