@@ -8,7 +8,7 @@ controller:
   active_force_mask: [2, 2, 2, 1, 1, 2]
 
   feed_forward:
-    base_wrench: [-1.0, -1.0, 0.0, -0.95, 2.1, 0.0]
+    base_wrench: [0.0, 0.0, -1.05, 0.0, 0.0, 0.0]
 
   controller_scale:
     # Time constant for out of spec measurement trust decay
@@ -49,13 +49,13 @@ controller:
       #[x,y,z,r,p,y]
 
       # First order eta
-      eta_order_0: [1.8, 1.8, 10.0, 0.2, 0.2, 0.3]
+      eta_order_0: [1.2, 1.5, 1.2, 0.0, 0.0, 0.0]
 
       # Second order eta
-      eta_order_1: [0.08, 0.08, 0.3, 0.0, 0.0, 0.0]
+      eta_order_1: [0.2, 0.04, 0.3, 0.0, 0.0, 0.0]
 
       # Lambda
-      lambda: [0.25, 0.25, 1.0, 10.0, 10.0, 0.35]
+      lambda: [1.5, 0.8, 1.0, 0.0, 0.0, 0.0]
 
       # format: 'a, m' for each degree of freedom
       # where:
@@ -78,9 +78,9 @@ controller:
     # Linear unit are newtons per meter, angular are newton meter per radian
 
     # The default gains for normal operation
-    p_gains: [3.0, 18.0, 200.0, 2.0, 2.0, 2.5]
-    i_gains: [0.0, 0.0, 0.0, 0.01, 1.0, 0.0]
-    d_gains: [5.0, 5.0, 90.0, 1.0, 0.05, 0.9]
+    p_gains: [0.0, 0.0, 0.0, 0.1, 0.1, 1.0]
+    i_gains: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    d_gains: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
     # The control value thresholds for each DOF -- body frame
     max_control_thresholds: [30, 30, 30, 15, 15, 15]
