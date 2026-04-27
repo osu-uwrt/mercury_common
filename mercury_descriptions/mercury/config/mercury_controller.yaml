@@ -5,7 +5,7 @@ controller_overseer:
 
 controller:
   scaling_factor: 1000000
-  active_force_mask: [2, 2, 2, 1, 1, 2]
+  active_force_mask: [2, 2, 2, 1, 1, 1]
 
   feed_forward:
     base_wrench: [0.0, 0.0, -1.05, 0.0, 0.0, 0.0]
@@ -78,7 +78,7 @@ controller:
     # Linear unit are newtons per meter, angular are newton meter per radian
 
     # The default gains for normal operation
-    p_gains: [0.0, 0.0, 0.0, 0.1, 0.1, 1.0]
+    p_gains: [0.0, 0.0, 0.0, 10.0, 10.0, 10.0]
     i_gains: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     d_gains: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
