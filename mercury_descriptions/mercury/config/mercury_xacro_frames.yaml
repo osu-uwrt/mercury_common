@@ -1,5 +1,5 @@
 # Base_link relative to center
-robot_center: [-0.18415, -0.06350, -0.02540]
+robot_center: [0.18415, 0.06350, 0.02540]
 
 imu:
   pose: [-0.07187, -0.0658, 0.02197, 0.0, 0.0, 0.0]
@@ -12,7 +12,7 @@ cameras: [
     type: zed, 
     name: ffc,
     baseline: 0.045, # m. Distance between cameras (manually measured) 
-    pose: [-0.00815, -0.05288, -0.02737, 1.5707, 0, 0]
+    pose: [-0.00815, -0.05288, -0.02737, 0.0, 0.0, 0.0]
   }
 ]
 
