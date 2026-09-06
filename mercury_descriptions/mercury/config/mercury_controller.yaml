@@ -49,13 +49,13 @@ controller:
       #[x,y,z,r,p,y]
 
       # First order eta
-      eta_order_0: [0.0, 0.0, 1.2, 0.0, 0.0, 0.0]
+      eta_order_0: [1.2, 1.5, 1.2, 0.0, 0.0, 0.0]
 
       # Second order eta
-      eta_order_1: [0.0, 0.0, 0.3, 0.0, 0.0, 0.0]
+      eta_order_1: [0.2, 0.04, 0.3, 0.0, 0.0, 0.0]
 
       # Lambda
-      lambda: [20.0, 20.0, 1.0, 0.0, 0.0, 0.0]
+      lambda: [1.5, 0.8, 1.0, 0.0, 0.0, 0.0]
 
       # format: 'a, m' for each degree of freedom
       # where:
@@ -78,7 +78,7 @@ controller:
     # Linear unit are newtons per meter, angular are newton meter per radian
 
     # The default gains for normal operation
-    p_gains: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    p_gains: [0.0, 0.0, 0.0, 0.1, 0.1, 1.0]
     i_gains: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     d_gains: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
